@@ -29,7 +29,9 @@ import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-//https://blog.mimacom.com/embeddedkafka-kafka-auto-configure-springboottest-bootstrapserversproperty/
+/**
+ * @see <a href="https://blog.mimacom.com/embeddedkafka-kafka-auto-configure-springboottest-bootstrapserversproperty/">Example</a>
+ */
 @SpringBootTest
 @EmbeddedKafka(
         bootstrapServersProperty = "spring.kafka.bootstrap-servers",

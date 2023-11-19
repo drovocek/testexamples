@@ -1,6 +1,5 @@
-package com.example.embedded.repository;
+package com.example.embedded;
 
-import com.example.embedded.entity.FooEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -9,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@Repository
+//https://mkyong.com/spring/spring-jdbctemplate-querying-examples/
 public class JdbcFooRepository implements FooRepository {
 
     private final JdbcTemplate jdbcTemplate;

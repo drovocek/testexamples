@@ -1,6 +1,4 @@
-package com.example.embedded.repository;
-
-import com.example.embedded.entity.FooEntity;
+package com.example.embedded;
 
 import java.util.List;
 import java.util.Optional;

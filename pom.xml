@@ -47,7 +47,7 @@
             <artifactId>spring-kafka-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- Embedded Posgresql https://github.com/zonkyio/embedded-database-spring-test#quick-start-->
+        <!-- Embedded Posgresql -->
         <dependency>
             <groupId>io.zonky.test</groupId>
             <artifactId>embedded-database-spring-test</artifactId>

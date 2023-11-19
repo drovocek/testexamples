@@ -1,4 +1,4 @@
-package com.example.embedded.entity;
+package com.example.embedded;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

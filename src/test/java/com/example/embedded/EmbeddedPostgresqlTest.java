@@ -1,13 +1,13 @@
 package com.example.embedded;
 
-import com.example.embedded.entity.FooEntity;
-import com.example.embedded.repository.FooRepository;
-import com.example.embedded.repository.JdbcFooRepository;
 import io.zonky.test.db.AutoConfigureEmbeddedDatabase;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
@@ -19,7 +19,11 @@ import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-//@JdbcTest
+/**
+ * @see <a href="https://github.com/zonkyio/embedded-database-spring-test#quick-start">Lib Readme</a>
+ */
+@JdbcTest
+@Import(EmbeddedPostgreSQLConfig.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @ExtendWith(SpringExtension.class)
 @Sql({"/jdbc/test-foo-schema.sql", "/jdbc/test-foo-data.sql"})
@@ -29,15 +33,16 @@ import static org.assertj.core.api.Assertions.assertThat;
         type = AutoConfigureEmbeddedDatabase.DatabaseType.POSTGRES)
 class EmbeddedPostgresqlTest {
 
-    @Autowired
-    private DataSource embeddedDataSource;
+//    @Autowired
+//    private DataSource embeddedDataSource;
 
+    @Autowired
     private FooRepository repository;
 
-    @PostConstruct
-    void config() {
-        this.repository = new JdbcFooRepository(this.embeddedDataSource);
-    }
+//    @PostConstruct
+//    void config() {
+//        this.repository = new JdbcFooRepository(this.embeddedDataSource);
+//    }
 
     @Test
     void save() {
