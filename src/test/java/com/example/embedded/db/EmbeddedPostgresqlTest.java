@@ -1,4 +1,4 @@
-package com.example.embedded;
+package com.example.embedded.db;
 
 import io.zonky.test.db.AutoConfigureEmbeddedDatabase;
 import org.junit.jupiter.api.Test;
@@ -6,13 +6,10 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import javax.annotation.PostConstruct;
-import javax.sql.DataSource;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -23,10 +20,10 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @see <a href="https://github.com/zonkyio/embedded-database-spring-test#quick-start">Lib Readme</a>
  */
 @JdbcTest
-@Import(EmbeddedPostgreSQLConfig.class)
+@Import(EmbeddedPostgreSQLTestConfiguration.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @ExtendWith(SpringExtension.class)
-@Sql({"/jdbc/test-foo-schema.sql", "/jdbc/test-foo-data.sql"})
+@Sql({"/db/foo/test-foo-schema.sql", "/db/foo/test-foo-data.sql"})
 @AutoConfigureEmbeddedDatabase(
         provider = AutoConfigureEmbeddedDatabase.DatabaseProvider.ZONKY,
         refresh = AutoConfigureEmbeddedDatabase.RefreshMode.AFTER_EACH_TEST_METHOD,

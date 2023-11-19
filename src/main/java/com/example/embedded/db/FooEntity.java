@@ -1,4 +1,4 @@
-package com.example.embedded;
+package com.example.embedded.db;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,7 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class FooEntity {
+class FooEntity {
 
     private UUID fooId;
     private String fooName;

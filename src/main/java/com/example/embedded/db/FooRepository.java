@@ -1,4 +1,4 @@
-package com.example.embedded;
+package com.example.embedded.db;
 
 import java.util.List;
 import java.util.Optional;
