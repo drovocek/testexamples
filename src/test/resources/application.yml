@@ -1,0 +1,27 @@
+#zonky:
+#  test:
+#    database:
+#      type: postgres # The type of embedded database to be created when replacing the data source.
+#      provider: zonky # Provider to be used to create the underlying embedded database.
+#      refresh: after_each_test_method # Determines the refresh mode of the embedded database.
+#      replace: any # Determines what type of existing DataSource beans can be replaced.
+#
+#      # Additional PostgreSQL options used to configure the test data source
+#      postgres:
+#        client:
+#          properties:
+#            stringtype: unspecified
+#
+#      # Additional PostgreSQL options to pass to initdb command during the database initialization.
+#        initdb:
+#          properties:
+#            lc-collate: cs_CZ.UTF-8
+#            lc-monetary: cs_CZ.UTF-8
+#            lc-numeric: cs_CZ.UTF-8
+#
+#      # Additional PostgreSQL options used to configure the embedded database server.
+#        server:
+#          properties:
+#            shared_buffers: 512MB
+#            max_connections: 100
+
