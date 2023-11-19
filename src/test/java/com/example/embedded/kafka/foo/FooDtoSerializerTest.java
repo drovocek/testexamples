@@ -11,13 +11,14 @@ class FooDtoSerializerTest {
 
     @Test
     void serialize() throws IOException {
-        FooDtoSerializer fooDtoSerializer = new FooDtoSerializer();
-        FooDto foo = new FooDto(UUID.randomUUID(), "test_name", 1);
-        byte[] data = fooDtoSerializer.serialize("topic_name", foo);
-        ObjectMapper objectMapper = new ObjectMapper();
-        FooDto actual = objectMapper.readValue(data, FooDto.class);
+        try (FooDtoSerializer fooDtoSerializer = new FooDtoSerializer()) {
+            FooDto foo = new FooDto(UUID.randomUUID(), "test_name", 1);
+            byte[] data = fooDtoSerializer.serialize("topic_name", foo);
+            ObjectMapper objectMapper = new ObjectMapper();
+            FooDto actual = objectMapper.readValue(data, FooDto.class);
 
-        Assertions.assertThat(actual)
-                .isEqualTo(foo);
+            Assertions.assertThat(actual)
+                    .isEqualTo(foo);
+        }
     }
 }
