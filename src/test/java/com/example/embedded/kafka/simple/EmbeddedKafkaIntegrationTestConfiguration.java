@@ -1,4 +1,4 @@
-package com.example.embedded.kafka;
+package com.example.embedded.kafka.simple;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -13,7 +13,7 @@ class EmbeddedKafkaIntegrationTestConfiguration {
     }
 
     @Bean
-    SimpleKafkaProducer SimpleKafkaProducer(KafkaTemplate<String, String> kafkaTemplate) {
+    SimpleKafkaProducer kafkaProducer(KafkaTemplate<String, String> kafkaTemplate) {
         return new SimpleKafkaProducer(kafkaTemplate);
     }
 }

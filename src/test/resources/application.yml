@@ -2,7 +2,10 @@ spring:
   kafka:
     consumer:
       auto-offset-reset: earliest
-      group-id: baeldung
+      group-id: testGroup
+#      value-deserializer: com.example.embedded.kafka.foo.FooDtoDeserializer
+#    producer:
+#      value-serializer: com.example.embedded.kafka.foo.FooDtoSerializer
 test:
   topic: embedded-test-topic
 

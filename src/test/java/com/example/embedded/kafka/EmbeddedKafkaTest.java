@@ -22,6 +22,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.test.EmbeddedKafkaBroker;
 import org.springframework.kafka.test.context.EmbeddedKafka;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.TestPropertySource;
 
 import java.time.Duration;
@@ -33,7 +34,10 @@ import java.util.concurrent.TimeUnit;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * @see <a href="https://blog.mimacom.com/embeddedkafka-kafka-auto-configure-springboottest-bootstrapserversproperty/">Example</a>
+ * @see <a href="https://habr.com/ru/articles/742786/">Example 1</a>
+ */
+/**
+ * @see <a href="https://blog.mimacom.com/embeddedkafka-kafka-auto-configure-springboottest-bootstrapserversproperty/">Example 2</a>
  */
 @SpringBootTest
 @EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class,

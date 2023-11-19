@@ -1,19 +1,17 @@
-package com.example.embedded.kafka;
+package com.example.embedded.kafka.simple;
 
 import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
 
+@Slf4j
 @RequiredArgsConstructor
 class SimpleKafkaProducer {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(SimpleKafkaProducer.class);
 
     private final KafkaTemplate<String, String> kafkaTemplate;
 
     public void send(String topic, String payload) {
-        LOGGER.info("sending payload='{}' to topic='{}'", payload, topic);
+        log.info("sending payload='{}' to topic='{}'", payload, topic);
         this.kafkaTemplate.send(topic, payload);
     }
 }
